@@ -2,7 +2,7 @@ function Person({ id, firstName, lastName, email, img }) {
   console.log(firstName);
 
   return (
-    <div>
+    <div className="card">
       <img src={img} />
 
       <h3>

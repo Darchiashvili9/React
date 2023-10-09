@@ -3,7 +3,7 @@ import persons from "../data/persons";
 
 function Persons() {
   return (
-    <div>
+    <div className="cards">
       {persons.map((person, index) => {
         return <Person key={index} {...person} />;
       })}
