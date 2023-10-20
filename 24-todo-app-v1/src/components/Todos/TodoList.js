@@ -5,12 +5,15 @@ const todos = [null];
 
 function TodoList(data) {
   const { todo } = data;
-  todos.push(todo);
+
+  if (todo != "") todos.push(todo);
+
+  console.log(todos);
 
   return (
     <>
       <hr />
-      {todos.length == 0 ? (
+      {todo == "" && todos.length == 1 ? (
         <h1>todos is empty</h1>
       ) : (
         todos.map((todo, index) => {

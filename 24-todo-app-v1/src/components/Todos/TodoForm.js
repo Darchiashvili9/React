@@ -30,9 +30,8 @@ function TodoForm() {
         />
 
         <button type="submit">submit</button>
+        <TodoList todo={todoSubmit} />
       </form>
-
-      {todoSubmit ? <TodoList todo={todoSubmit} /> : <h1>todos empty</h1>}
     </>
   );
 }
