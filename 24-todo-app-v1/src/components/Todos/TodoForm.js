@@ -1,36 +1,31 @@
 import { useState } from "react";
-import TodoList from "./TodoList";
 
-function TodoForm() {
-  const [todo, setTodo] = useState({ todo: "" });
+function TodoForm({ addTodo }) {
+  const [text, setText] = useState("");
 
-  const [todoSubmit, setTodoSubmit] = useState("");
-
-  function handleTodoSubmit(event) {
+  const onSubmitHandler = (event) => {
     event.preventDefault();
-    setTodoSubmit(todo.todo);
-    setTodo({ todo: "" });
-  }
+    addTodo(text);
+    setText("");
+  };
 
-  function handleTodoChange(todo) {
-    setTodo({ ...todo, todo: todo.target.value });
-    setTodoSubmit("");
-  }
+  const onChangeHandler = (e) => {
+    setText(e.target.value);
+  };
 
   return (
     <>
       <h1>Todo App</h1>
 
-      <form onSubmit={handleTodoSubmit}>
+      <form onSubmit={onSubmitHandler}>
         <input
           placeholder="Enter new Todo"
           type="text"
-          value={todo.todo}
-          onChange={(t) => handleTodoChange(t)}
+          value={text}
+          onChange={(e) => onChangeHandler(e)}
         />
 
         <button type="submit">submit</button>
-        <TodoList todo={todoSubmit} />
       </form>
     </>
   );

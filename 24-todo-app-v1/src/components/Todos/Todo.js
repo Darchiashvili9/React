@@ -1,8 +1,6 @@
-function Todo(data) {
-  const { Todo } = data;
-
+function Todo({ todo }) {
   //  console.log(Todo);
-  return <h1>{Todo}</h1>;
+  return <h2>{todo}</h2>;
 }
 
 export default Todo;

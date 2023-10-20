@@ -1,23 +1,15 @@
 import { useState } from "react";
 import Todo from "./Todo";
 
-const todos = [null];
-
-function TodoList(data) {
-  const { todo } = data;
-
-  if (todo != "") todos.push(todo);
-
-  console.log(todos);
-
+function TodoList({ todos }) {
   return (
     <>
       <hr />
-      {todo == "" && todos.length == 1 ? (
-        <h1>todos is empty</h1>
+      {todos.length == 0 ? (
+        <h3>todos is empty</h3>
       ) : (
         todos.map((todo, index) => {
-          return <Todo key={index} Todo={todo} />;
+          return <Todo key={index} todo={todo} />;
         })
       )}
     </>
