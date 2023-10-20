@@ -1,6 +1,11 @@
+import styles from "./Todo.module.css";
+
 function Todo({ todo }) {
-  //  console.log(Todo);
-  return <h2>{todo}</h2>;
+  return (
+    <div className={styles.todo}>
+      <div className={styles.todoText}>{todo}</div>
+    </div>
+  );
 }
 
 export default Todo;
